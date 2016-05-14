@@ -8,7 +8,7 @@ package tryhelloworld;
  *       num은 0이상의 정수이며, num이 음수인 경우는 없습니다
  */
 
-public class EvenOrOdd {
+public class EvenOrOdd03 {
 
     String evenOrOdd(int num) {
         return num % 2 == 0 ? "Even" : "Odd";
@@ -16,7 +16,7 @@ public class EvenOrOdd {
 
     public static void main(String[] args) {
         String str = "1 2 3 4";
-        EvenOrOdd evenOrOdd = new EvenOrOdd();
+        EvenOrOdd03 evenOrOdd = new EvenOrOdd03();
         //아래는 테스트로 출력해 보기 위한 코드입니다.
         System.out.println("결과 : " + evenOrOdd.evenOrOdd(3));
         System.out.println("결과 : " + evenOrOdd.evenOrOdd(2));
