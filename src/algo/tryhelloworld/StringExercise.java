@@ -1,4 +1,4 @@
-package tryhelloworld;
+package algo.tryhelloworld;
 
 /**
  * Created by sould on 2016-05-19.

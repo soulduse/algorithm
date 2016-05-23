@@ -1,4 +1,4 @@
-package backjune;
+package algo.backjune;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package tryhelloworld;
+package algo.tryhelloworld;
 
 import java.util.Arrays;
 
