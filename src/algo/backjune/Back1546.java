@@ -24,55 +24,25 @@ public class Back1546 {
         in.read();
         double score[]   = changeDoubleArray(in.readLine());
         double max = score[0];
-        int scoreLength = score.length;
         double hap = 0;
         double result = 0;
 
-        for(int i=1; i<scoreLength; i++){
+        for(int i=1; i<cnt; i++){
             if(max < score[i]){
                 max = score[i];
             }
         }
 
-        for(int i=0; i<scoreLength; i++){
+        for(int i=0; i<cnt; i++){
             if(score[i] != max){
                 score[i] = score[i]/max*100;
             }
             hap += score[i];
         }
-
-        result = hap/scoreLength;
-
-        System.out.println(result);
-
-        /*
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        int max = 0;
-
-        int cnt         = in.read()-'0';
-        in.read();
-        String scores[]   = in.readLine().split(" ");
-
-        System.out.println(scores[0]+" / " +scores[1]+" / "+scores[2]);
-        aLoopName : for(int i=0; i<cnt; i++){
-            System.out.println("cnt : "+cnt +" / i "+i);
-            int score = change(scores[i]);
-            if(max < score){
-                max = score;
-                continue aLoopName;
-            }
-
-            if(max > change(scores[i])){
-                scores[i] = (change(scores[i])/max*100)+"";
-            }
-
-            System.out.println(scores[i]);
-        }
-
-        System.out.println(max);
+        result = hap/cnt;
+        System.out.printf("%.2f",result);
 
         in.close();
-        */
     }
 
     private static double[] changeDoubleArray(String score){
