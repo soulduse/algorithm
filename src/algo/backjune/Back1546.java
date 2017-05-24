@@ -1,8 +1,6 @@
 package algo.backjune;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * Created by developerkhy@gmail.com on 2017. 5. 24.
@@ -17,43 +15,25 @@ import java.io.InputStreamReader;
  */
 public class Back1546 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        int cnt         = in.read()-'0';
-        in.read();
-        double score[]   = changeDoubleArray(in.readLine());
-        double max = score[0];
-        double hap = 0;
-        double result = 0;
+        Scanner sc = new Scanner(System.in);
+        int cnt         = sc.nextInt();
+        int max         = 0;
+        int score[]     = new int[cnt];
+        double hap      = 0;
 
-        for(int i=1; i<cnt; i++){
+        for(int i=0; i<cnt; i++){
+            score[i] = sc.nextInt();
             if(max < score[i]){
                 max = score[i];
             }
         }
 
-        for(int i=0; i<cnt; i++){
-            if(score[i] != max){
-                score[i] = score[i]/max*100;
-            }
-            hap += score[i];
-        }
-        result = hap/cnt;
-        System.out.printf("%.2f",result);
-
-        in.close();
-    }
-
-    private static double[] changeDoubleArray(String score){
-        String scoreArr [] = score.split(" ");
-
-        double resultArr[] = new double[scoreArr.length];
-
-        for(int i=0; i<resultArr.length; i++){
-            resultArr[i] = Double.parseDouble(scoreArr[i]);
+        for(double d : score){
+            hap += d/max*100;
         }
 
-        return resultArr;
+        System.out.printf("%.2f",hap/cnt);
     }
 }
